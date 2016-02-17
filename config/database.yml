@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   database: secrets_development
-  username: ubuntu
+  username: secrets
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,7 +59,7 @@ development:
 test:
   <<: *default
   database: secrets_test
-  username: ubuntu
+  username: secrets
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,5 +83,5 @@ test:
 production:
   <<: *default
   database: secrets_production
-  username: ubuntu
+  username: secrets
   password: <%= ENV['SECRETS_DATABASE_PASSWORD'] %>
