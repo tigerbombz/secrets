@@ -1,0 +1,16 @@
+<h1>Welcome, <%=@user.name%></h1>
+<p><a href="/users/<%=@user.id%>/edit">Edit Your Profile</a></p>
+
+<% if flash[:answer]%>
+  <%= flash[:answer]%>
+<% end %>
+
+
+<h4>Secrets</h4>
+
+<%= form_for @secret, :url => { controller: "secrets", :action => "create" } do |f| %>
+ <%= f.text_area(:secret, size: '50x10')%>
+ <%= submit_tag 'Create Secret' %>
+<% end %>
+
+<hr>
